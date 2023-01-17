@@ -1,3 +1,20 @@
 .navbar {
 	background-color: rgb(184, 177, 177);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.logo {
+	margin-left: 3rem;
+}
+.content {
+	margin-right: 3rem;
+}
+.content {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.cart-icon-div {
+	display: flex;
 }
