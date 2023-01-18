@@ -3,8 +3,9 @@ import "./Filters.css";
 
 const Filters = () => {
 	return (
-		<div>
+		<div className='filter-wrapper'>
 			<div className='colors-div'>
+				<h3>Colors</h3>
 				<label>
 					<input type='checkbox' />
 					Red
@@ -18,7 +19,8 @@ const Filters = () => {
 					Green
 				</label>
 			</div>
-			<div className='gneder-div'>
+			<div className='gender-div'>
+				<h3>Gender</h3>
 				<label>
 					<input type='checkbox' />
 					Men
@@ -29,6 +31,7 @@ const Filters = () => {
 				</label>
 			</div>
 			<div className='price-div'>
+				<h3>Price</h3>
 				<label>
 					<input type='checkbox' />
 					Rs. 0-250
@@ -43,6 +46,7 @@ const Filters = () => {
 				</label>
 			</div>
 			<div className='type-div'>
+				<h3>Type</h3>
 				<label>
 					<input type='checkbox' />
 					Pole
