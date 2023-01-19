@@ -6,9 +6,10 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	position: relative;
+	flex: 1;
+	/* position: relative;
 	top: 5rem;
-	left: 1rem;
+	left: 1rem; */
 }
 .colors-div,
 .gender-div,

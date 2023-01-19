@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../common/Header/Navbar";
 import Filters from "./components/Filters/Filters";
+import Products from "./components/Products/Products";
 import "./LandingPage.css";
 
 const LandingPage = () => {
@@ -8,6 +9,7 @@ const LandingPage = () => {
 		<div>
 			<Navbar />
 			<Filters />
+			<Products />
 		</div>
 	);
 };
