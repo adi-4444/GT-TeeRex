@@ -42,7 +42,7 @@ const Filters = () => {
 				</label>
 				<label>
 					<input type='checkbox' />
-					Rs. 250
+					Rs. 450
 				</label>
 			</div>
 			<div className='type-div'>

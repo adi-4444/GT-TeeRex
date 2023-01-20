@@ -8,8 +8,10 @@ const LandingPage = () => {
 	return (
 		<div>
 			<Navbar />
-			<Filters />
-			<Products />
+			<div className='app-body'>
+				<Filters />
+				<Products />
+			</div>
 		</div>
 	);
 };

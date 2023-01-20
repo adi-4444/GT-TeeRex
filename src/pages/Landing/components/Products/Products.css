@@ -1,4 +1,25 @@
 .products-wrapper {
+	flex: 1;
+	background-color: #ffffff;
+	margin: 0.5rem;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.search-div {
+	text-align: center;
+	padding: 0.3rem;
+	background-color: rgb(237, 230, 230);
 	display: flex;
-	flex: 3;
+	align-items: center;
+	justify-content: center;
+	width: 300px;
+	margin: 5px auto 5px auto;
+}
+.search-icon {
+	margin: 0 5px 0 5px;
+}
+.search {
+	padding: 5px;
+	width: 100%;
+	border-radius: 10px;
+	border: none;
 }
