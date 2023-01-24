@@ -3,11 +3,12 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	position: fixed;
+	height: 3rem;
+	box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+	position: -webkit-sticky;
+	position: sticky;
 	top: 0;
-	width: 100%;
-	height: 2.5rem;
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	z-index: 160;
 }
 .logo {
 	margin-left: 3rem;
@@ -24,4 +25,9 @@
 .cart-icon-div {
 	display: flex;
 	cursor: pointer;
+}
+.cart-count a,
+.logo a {
+	text-decoration: none;
+	color: #000;
 }

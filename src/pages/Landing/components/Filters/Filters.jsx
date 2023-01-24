@@ -4,6 +4,7 @@ import "./Filters.css";
 const Filters = () => {
 	return (
 		<div className='filter-wrapper'>
+			<h2>Filters</h2>
 			<div className='colors-div'>
 				<h3>Colors</h3>
 				<label>

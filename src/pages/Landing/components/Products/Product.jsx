@@ -1,8 +1,14 @@
 import React from "react";
+import { ADD_TO_CART } from "../../../../common/constants/cartConstants";
+import { ContextStates } from "../../../../context/Context";
 import "./Product.css";
 
 const Product = ({ productsData }) => {
-	console.log(productsData);
+	const {
+		cartState: { cart },
+		cartDispatch,
+	} = ContextStates();
+
 	return (
 		<div className='products-container'>
 			{productsData &&
@@ -16,7 +22,16 @@ const Product = ({ productsData }) => {
 						<h3 className='card-name'>{product.name}</h3>
 						<div className='card-bottom'>
 							<h4>Rs.{product.price}</h4>
-							<button>Add to Cart</button>
+							<button
+								onClick={() =>
+									cartDispatch({
+										type: ADD_TO_CART,
+										payload: product,
+									})
+								}
+							>
+								Add to Cart
+							</button>
 						</div>
 					</div>
 				))}

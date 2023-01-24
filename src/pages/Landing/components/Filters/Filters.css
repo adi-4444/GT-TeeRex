@@ -5,10 +5,14 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	flex: 0.2;
+	flex: 0.15;
 	margin: 0.5rem;
-	height: 100vh;
+	height: 80vh;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	border-radius: 6rem;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 4rem;
 }
 .colors-div,
 .gender-div,
@@ -18,6 +22,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	margin: 2px 5px 4px 3px;
+	width: 110px;
 }
 input {
 	margin-right: 5px;
