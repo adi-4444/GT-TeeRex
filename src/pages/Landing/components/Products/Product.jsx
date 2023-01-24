@@ -4,10 +4,7 @@ import { ContextStates } from "../../../../context/Context";
 import "./Product.css";
 
 const Product = ({ productsData }) => {
-	const {
-		cartState: { cart },
-		cartDispatch,
-	} = ContextStates();
+	const { cartDispatch } = ContextStates();
 
 	return (
 		<div className='products-container'>
@@ -17,7 +14,7 @@ const Product = ({ productsData }) => {
 						<img
 							className='card-image'
 							src={product.imageURL}
-							alt='Image'
+							alt='img'
 						/>
 						<h3 className='card-name'>{product.name}</h3>
 						<div className='card-bottom'>

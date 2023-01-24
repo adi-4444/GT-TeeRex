@@ -15,7 +15,9 @@ const Navbar = () => {
 				</h1>
 			</div>
 			<div className='content'>
-				<h3>Products</h3>
+				<h3>
+					<Link to={"/"}>Products</Link>
+				</h3>
 				<div className='cart-icon-div'>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'

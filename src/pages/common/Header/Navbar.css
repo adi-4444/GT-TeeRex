@@ -27,7 +27,8 @@
 	cursor: pointer;
 }
 .cart-count a,
-.logo a {
+.logo a,
+.content a {
 	text-decoration: none;
 	color: #000;
 }
