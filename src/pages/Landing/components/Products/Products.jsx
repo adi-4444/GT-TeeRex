@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./Products.css";
 import { getProducts } from "../../../common/apis/getProducts";
 import Product from "./Product";
+import { ContextStates } from "../../../../context/Context";
 
 const Products = () => {
 	const [productsData, setProductsData] = useState([]);
+	const { filters } = ContextStates().filterState;
 
 	const fetchProducts = async () => {
 		const data = await getProducts();
@@ -14,6 +16,23 @@ const Products = () => {
 		fetchProducts();
 		// eslint-disable-next-line
 	}, []);
+
+	const filterProducts = (products, filters) => {
+		const { colours, gender, price, type } = filters;
+		const filteredProducts = products;
+
+		if (colours.length > 0) {
+			filteredProducts = filteredProducts.filter((item) =>
+				colours.includes(item.colour)
+			);
+		}
+		if (gender.length > 0) {
+			filteredProducts = filteredProducts.filter((item) =>
+				gender.includes(item.gender)
+			);
+		}
+	};
+	const filteredProducts = filterProducts(productsData, filters);
 
 	return (
 		<div className='products-wrapper'>

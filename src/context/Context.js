@@ -1,12 +1,13 @@
 import { useContext, createContext, useReducer } from "react";
 import { cartReducer, filterReducer } from "./Reducer";
 
-const Context = createContext()
 
 const initialState = {
    cart: [],
-   filters: { colors: '', gender: '', price: '', type: '' }
+   filters: { colours: [], gender: [], price: [], type: [] }
 }
+
+const Context = createContext(initialState)
 
 const ContextProvider = ({ children }) => {
    const [filterState, filterDispatch] = useReducer(filterReducer, initialState)

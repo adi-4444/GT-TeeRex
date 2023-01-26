@@ -15,12 +15,12 @@ const Cart = () => {
 		cartState: { cart },
 		cartDispatch,
 	} = ContextStates();
+	console.log(cart);
 	useEffect(() => {
 		setTotal(
 			cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
 		);
 	}, [cart]);
-	console.log(cart);
 	return (
 		<div>
 			<Navbar />
