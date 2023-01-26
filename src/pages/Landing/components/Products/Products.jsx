@@ -6,7 +6,10 @@ import { ContextStates } from "../../../../context/Context";
 
 const Products = () => {
 	const [productsData, setProductsData] = useState([]);
-	const { filters } = ContextStates().filterState;
+	const [search, setSearch] = useState("");
+	const {
+		filters: { colours, gender, price, type },
+	} = ContextStates().filterState;
 
 	const fetchProducts = async () => {
 		const data = await getProducts();
@@ -17,13 +20,18 @@ const Products = () => {
 		// eslint-disable-next-line
 	}, []);
 
-	const filterProducts = (products, filters) => {
-		const { colours, gender, price, type } = filters;
-		const filteredProducts = products;
-
+	const filterProducts = () => {
+		let filteredProducts = productsData;
+		if (search) {
+			filteredProducts = filteredProducts.filter((item) =>
+				(item.name || item.color || item.type)
+					.toLowerCase()
+					.includes(search.toLowerCase())
+			);
+		}
 		if (colours.length > 0) {
 			filteredProducts = filteredProducts.filter((item) =>
-				colours.includes(item.colour)
+				colours.includes(item.color)
 			);
 		}
 		if (gender.length > 0) {
@@ -31,8 +39,27 @@ const Products = () => {
 				gender.includes(item.gender)
 			);
 		}
+		if (price.length > 0) {
+			filteredProducts = filteredProducts.filter((item) => {
+				for (let i = 0; i < price.length; i++) {
+					const range = price[i].split("-");
+					const minPrice = Number(range[0]);
+					const maxPrice = range[1] ? Number(range[1]) : Infinity;
+					if (item.price >= minPrice && item.price <= maxPrice) {
+						return true;
+					}
+				}
+				return false;
+			});
+		}
+		if (type.length > 0) {
+			filteredProducts = filteredProducts.filter((item) =>
+				type.includes(item.type)
+			);
+		}
+		return filteredProducts;
 	};
-	const filteredProducts = filterProducts(productsData, filters);
+	const filteredProducts = filterProducts();
 
 	return (
 		<div className='products-wrapper'>
@@ -54,9 +81,10 @@ const Products = () => {
 					className='search'
 					name='search'
 					placeholder='Search'
+					onChange={(e) => setSearch(e.target.value)}
 				/>
 			</div>
-			<Product productsData={productsData} />
+			<Product productsData={filteredProducts} />
 		</div>
 	);
 };

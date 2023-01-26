@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import {
+	CLEAR_FILTERS,
 	COLOUR,
 	GENDER,
 	PRICE,
@@ -10,6 +12,7 @@ import "./Filters.css";
 
 const Filters = () => {
 	const { filterDispatch } = ContextStates();
+	const location = useLocation();
 	const handleColourChange = (e, colour) => {
 		const check = e.target.checked;
 		filterDispatch({
@@ -38,6 +41,16 @@ const Filters = () => {
 			payload: { type, check },
 		});
 	};
+	useEffect(() => {
+		clearFilters();
+		// eslint-disable-next-line
+	}, [location]);
+
+	const clearFilters = () => {
+		filterDispatch({
+			type: CLEAR_FILTERS,
+		});
+	};
 
 	return (
 		<div className='filter-wrapper'>
@@ -47,21 +60,21 @@ const Filters = () => {
 				<label>
 					<input
 						type='checkbox'
-						onChange={(e) => handleColourChange(e, "red")}
+						onChange={(e) => handleColourChange(e, "Red")}
 					/>
 					Red
 				</label>
 				<label>
 					<input
 						type='checkbox'
-						onChange={(e) => handleColourChange(e, "blue")}
+						onChange={(e) => handleColourChange(e, "Blue")}
 					/>
 					Blue
 				</label>
 				<label>
 					<input
 						type='checkbox'
-						onChange={(e) => handleColourChange(e, "green")}
+						onChange={(e) => handleColourChange(e, "Green")}
 					/>
 					Green
 				</label>
@@ -71,14 +84,14 @@ const Filters = () => {
 				<label>
 					<input
 						type='checkbox'
-						onChange={(e) => handleGenderChange(e, "men")}
+						onChange={(e) => handleGenderChange(e, "Men")}
 					/>
 					Men
 				</label>
 				<label>
 					<input
 						type='checkbox'
-						onChange={(e) => handleGenderChange(e, "women")}
+						onChange={(e) => handleGenderChange(e, "Women")}
 					/>
 					Women
 				</label>
@@ -112,21 +125,21 @@ const Filters = () => {
 				<label>
 					<input
 						type='checkbox'
-						onChange={(e) => handleTypeChange(e, "pole")}
+						onChange={(e) => handleTypeChange(e, "Polo")}
 					/>
 					Pole
 				</label>
 				<label>
 					<input
 						type='checkbox'
-						onChange={(e) => handleTypeChange(e, "hoodie")}
+						onChange={(e) => handleTypeChange(e, "Hoodie")}
 					/>
 					Hoodie
 				</label>
 				<label>
 					<input
 						type='checkbox'
-						onChange={(e) => handleTypeChange(e, "basic")}
+						onChange={(e) => handleTypeChange(e, "Basic")}
 					/>
 					Basic
 				</label>

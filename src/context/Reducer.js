@@ -1,5 +1,5 @@
 import { ADD_TO_CART, DECREASE_QTY, INCREASE_QTY, REMOVE_FROM_CART } from '../common/constants/cartConstants'
-import { COLOUR, GENDER, PRICE, TYPE } from "../common/constants/filterConstants"
+import { CLEAR_FILTERS, COLOUR, GENDER, PRICE, TYPE } from "../common/constants/filterConstants"
 
 export const cartReducer = (state, action) => {
    switch (action.type) {
@@ -74,6 +74,13 @@ export const filterReducer = (state, action) => {
                type: action.payload.check ? [...state.filters.type, type] :
                   state.filters.type.length > 0 ? state.filters.type.filter(t => t !== type) :
                      []
+            }
+         }
+      case CLEAR_FILTERS:
+         return {
+            ...state,
+            filters: {
+               colours: [], gender: [], price: [], type: []
             }
          }
 

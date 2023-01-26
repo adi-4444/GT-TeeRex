@@ -1,8 +1,9 @@
 .products-container {
-	padding: 1rem;
+	padding: 2rem;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	gap: 1rem;
 }
 .product-wrapper {
 	margin: 8px;
@@ -13,10 +14,12 @@
 	align-items: center;
 	justify-content: space-around;
 	transition: all 0.3s ease-in-out;
+	box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+		rgba(14, 30, 37, 0.25) 0px 2px 16px 0px;
 }
 .product-wrapper:hover {
 	transform: scale(1.1);
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .card-name {
 	margin-top: -5px;

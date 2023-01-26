@@ -15,7 +15,7 @@ const Cart = () => {
 		cartState: { cart },
 		cartDispatch,
 	} = ContextStates();
-	console.log(cart);
+
 	useEffect(() => {
 		setTotal(
 			cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
@@ -35,6 +35,7 @@ const Cart = () => {
 									alt='img'
 								/>
 								<div className='product-details'>
+									{/* <p className='outofstock'>out of stock</p> */}
 									<h2 className='product-name'>{p.name}</h2>
 									<h3 className='product-price'>
 										Rs. {p.price}
@@ -63,11 +64,6 @@ const Cart = () => {
 													type: INCREASE_QTY,
 													payload: p,
 												})
-											}
-											disabled={
-												p.qty === p.quantity
-													? true
-													: false
 											}
 										>
 											+

@@ -87,3 +87,7 @@
 .total-items {
 	margin-top: 2rem;
 }
+.outofstock {
+	text-align: center;
+	color: red;
+}
