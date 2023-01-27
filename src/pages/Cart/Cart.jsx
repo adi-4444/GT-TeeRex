@@ -8,9 +8,13 @@ import {
 import { ContextStates } from "../../context/Context";
 import Navbar from "../common/Header/Navbar";
 import "./Cart.css";
+import ErrorMessage, { SuccessMesage } from "./ErrorMessage/ErrorMessage";
 
 const Cart = () => {
 	const [total, setTotal] = useState();
+	const [availableStock, setAvailableStock] = useState();
+	const [outOfStock, setOutOfStock] = useState();
+
 	const {
 		cartState: { cart },
 		cartDispatch,
@@ -21,6 +25,19 @@ const Cart = () => {
 			cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
 		);
 	}, [cart]);
+
+	const proceedHandler = () => {
+		const checkStock = cart.filter((item) => item.qty > item.quantity);
+		if (checkStock.length > 0) {
+			setOutOfStock(true);
+		} else {
+			setAvailableStock(true);
+		}
+		setTimeout(() => {
+			setOutOfStock(false);
+			setAvailableStock(false);
+		}, 3000);
+	};
 	return (
 		<div>
 			<Navbar />
@@ -35,7 +52,15 @@ const Cart = () => {
 									alt='img'
 								/>
 								<div className='product-details'>
-									{/* <p className='outofstock'>out of stock</p> */}
+									<p className='outofstock'>
+										{outOfStock &&
+											p.quantity === 0 &&
+											"Out Of Stock"}
+										{outOfStock &&
+											p.qty > p.quantity &&
+											p.quantity !== 0 &&
+											`Avalable Only ${p.quantity}`}
+									</p>
 									<h2 className='product-name'>{p.name}</h2>
 									<h3 className='product-price'>
 										Rs. {p.price}
@@ -93,7 +118,12 @@ const Cart = () => {
 				{cart.length > 0 ? (
 					<div className='total-count'>
 						<h2 className='total-amount'>Total Amount : {total}</h2>
-						<button className='proceed'>Proceed to Payment</button>
+						<button
+							onClick={() => proceedHandler()}
+							className='proceed'
+						>
+							Proceed to Payment
+						</button>
 						<h3 className='total-items'>
 							No.of Items in cart: {cart.length}
 						</h3>
@@ -102,6 +132,8 @@ const Cart = () => {
 					""
 				)}
 			</div>
+			{availableStock && <SuccessMesage />}
+			{outOfStock && <ErrorMessage />}
 		</div>
 	);
 };

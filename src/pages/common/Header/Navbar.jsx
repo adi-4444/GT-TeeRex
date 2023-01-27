@@ -18,7 +18,7 @@ const Navbar = () => {
 				<h3>
 					<Link to={"/"}>Products</Link>
 				</h3>
-				<div className='cart-icon-div'>
+				<Link className='cart-icon-div' to={"/cart"}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						width='1em'
@@ -33,9 +33,9 @@ const Navbar = () => {
 						/>
 					</svg>
 					<sup className='cart-count'>
-						<Link to={"/cart"}>{cart.length}</Link>
+						<p>{cart.length}</p>
 					</sup>
-				</div>
+				</Link>
 			</div>
 		</div>
 	);

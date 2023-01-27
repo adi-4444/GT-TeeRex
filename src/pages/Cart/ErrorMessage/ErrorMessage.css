@@ -1,0 +1,38 @@
+.message-wrapper {
+	width: 25rem;
+	background-color: rgb(226, 30, 30);
+	color: white;
+	padding: 1rem;
+	border-radius: 3rem;
+	animation-name: fadeInOut;
+	animation-duration: 0.7s;
+	position: absolute;
+	bottom: 5rem;
+	right: 5rem;
+}
+.error-message {
+	align-content: center;
+}
+.success-wrapper {
+	width: 25rem;
+	background-color: rgb(32, 199, 32);
+	padding: 1rem;
+	border-radius: 3rem;
+	color: white;
+	animation-name: fadeInOut;
+	animation-duration: 0.7s;
+	position: absolute;
+	bottom: 5rem;
+	right: 5rem;
+}
+.success-message {
+	text-align: center;
+}
+@keyframes fadeInOut {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
