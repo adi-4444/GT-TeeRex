@@ -32,3 +32,22 @@
 	text-decoration: none;
 	color: #000;
 }
+@media only screen and (max-width: 535px) {
+	.logo {
+		margin-left: 1.5rem;
+	}
+	.logo h1 {
+		font-size: x-large;
+	}
+	.content {
+		margin-right: 1.5rem;
+	}
+	.content h3 {
+		font-size: larger;
+	}
+	.content {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+}

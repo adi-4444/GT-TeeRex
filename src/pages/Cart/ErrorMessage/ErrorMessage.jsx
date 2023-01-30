@@ -5,8 +5,7 @@ const ErrorMessage = () => {
 	return (
 		<div className='message-wrapper'>
 			<h2 className='error-message'>
-				Some products are out of stock ! or available only limited
-				stocks
+				Some products are out of stock ! or limited stocks available
 			</h2>
 		</div>
 	);
