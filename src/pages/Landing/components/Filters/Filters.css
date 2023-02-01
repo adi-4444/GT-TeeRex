@@ -31,3 +31,8 @@ input {
 	margin: 1rem auto;
 	padding: 5px;
 }
+@media only screen and (max-width: 500px) {
+	.filter-wrapper {
+		display: none;
+	}
+}
