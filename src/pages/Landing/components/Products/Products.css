@@ -38,4 +38,14 @@
 		margin-right: 1rem;
 		cursor: pointer;
 	}
+	.products-wrapper {
+		margin: 2px;
+	}
+	.products-header {
+		gap: 1rem;
+	}
+	.search-div {
+		width: 250px;
+		margin-left: 5px;
+	}
 }

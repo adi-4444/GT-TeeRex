@@ -4,7 +4,7 @@ import { getProducts } from "../../../common/apis/getProducts";
 import Product from "./Product";
 import { ContextStates } from "../../../../context/Context";
 
-const Products = () => {
+const Products = ({ showFilters }) => {
 	const [productsData, setProductsData] = useState([]);
 	const [search, setSearch] = useState("");
 	const {
@@ -92,6 +92,7 @@ const Products = () => {
 						height='1.7em'
 						viewBox='0 0 24 24'
 						className='filter-icon'
+						onClick={showFilters}
 					>
 						<path
 							fill='#6c6767'

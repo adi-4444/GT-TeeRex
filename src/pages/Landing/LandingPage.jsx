@@ -5,7 +5,7 @@ import Products from "./components/Products/Products";
 import "./LandingPage.css";
 
 const LandingPage = () => {
-	const [showFilter, setShowFilter] = useState(false);
+	const [showFilter, setShowFilter] = useState(true);
 	const showFilters = () => {
 		setShowFilter(!showFilter);
 	};
@@ -13,8 +13,11 @@ const LandingPage = () => {
 		<div>
 			<Navbar />
 			<div className='app-body'>
-				<Filters showFilters={showFilters} />
-				<Products showFilter={showFilter} />
+				<Filters
+					showFilter={showFilter}
+					setShowFilter={setShowFilter}
+				/>
+				<Products showFilters={showFilters} />
 			</div>
 		</div>
 	);

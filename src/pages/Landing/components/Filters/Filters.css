@@ -13,6 +13,7 @@
 	position: -webkit-sticky;
 	position: sticky;
 	top: 4rem;
+	transition: all 0.3s ease-in-out;
 }
 .colors-div,
 .gender-div,
@@ -33,6 +34,7 @@ input {
 }
 @media only screen and (max-width: 500px) {
 	.filter-wrapper {
-		display: none;
+		position: absolute;
+		left: 10px;
 	}
 }

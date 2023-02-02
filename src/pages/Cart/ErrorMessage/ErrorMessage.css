@@ -36,3 +36,18 @@
 		opacity: 1;
 	}
 }
+@media only screen and (max-width: 500px) {
+	.message-wrapper {
+		position: absolute;
+		top: 0;
+	}
+	.success-wrapper {
+		position: relative;
+		right: 5px;
+	}
+	.message-wrapper {
+		position: relative;
+		right: auto;
+		top: -6rem;
+	}
+}
