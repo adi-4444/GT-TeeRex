@@ -8,7 +8,6 @@ const Products = ({ showFilters, setShowFilter }) => {
 	const [productsData, setProductsData] = useState([]);
 	const [search, setSearch] = useState("");
 	const { status } = productsData;
-	console.log(status);
 	useEffect(() => {
 		if (status === 403) {
 			setShowFilter(false);
