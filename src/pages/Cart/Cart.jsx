@@ -90,6 +90,11 @@ const Cart = () => {
 													payload: p,
 												})
 											}
+											disabled={
+												p.qty >= p.quantity
+													? true
+													: false
+											}
 										>
 											+
 										</button>

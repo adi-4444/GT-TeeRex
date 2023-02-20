@@ -4,9 +4,17 @@ import { getProducts } from "../../../common/apis/getProducts";
 import Product from "./Product";
 import { ContextStates } from "../../../../context/Context";
 
-const Products = ({ showFilters }) => {
+const Products = ({ showFilters, setShowFilter }) => {
 	const [productsData, setProductsData] = useState([]);
 	const [search, setSearch] = useState("");
+	const { status } = productsData;
+	console.log(status);
+	useEffect(() => {
+		if (status === 403) {
+			setShowFilter(false);
+		}
+		// eslint-disable-next-line
+	}, [status]);
 	const {
 		filters: { colours, gender, price, type },
 	} = ContextStates().filterState;

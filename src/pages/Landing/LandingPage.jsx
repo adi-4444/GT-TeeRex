@@ -17,7 +17,10 @@ const LandingPage = () => {
 					showFilter={showFilter}
 					setShowFilter={setShowFilter}
 				/>
-				<Products showFilters={showFilters} />
+				<Products
+					showFilters={showFilters}
+					setShowFilter={setShowFilter}
+				/>
 			</div>
 		</div>
 	);
